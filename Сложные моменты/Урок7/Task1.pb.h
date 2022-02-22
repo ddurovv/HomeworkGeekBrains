@@ -27,8 +27,10 @@
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/metadata_lite.h>
 #include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_Task1_2eproto
@@ -44,19 +46,560 @@ struct TableStruct_Task1_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
   static const uint32_t offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Task1_2eproto;
+namespace Task1 {
+class FullName;
+struct FullNameDefaultTypeInternal;
+extern FullNameDefaultTypeInternal _FullName_default_instance_;
+class Student;
+struct StudentDefaultTypeInternal;
+extern StudentDefaultTypeInternal _Student_default_instance_;
+class StudentsGroup;
+struct StudentsGroupDefaultTypeInternal;
+extern StudentsGroupDefaultTypeInternal _StudentsGroup_default_instance_;
+}  // namespace Task1
 PROTOBUF_NAMESPACE_OPEN
+template<> ::Task1::FullName* Arena::CreateMaybeMessage<::Task1::FullName>(Arena*);
+template<> ::Task1::Student* Arena::CreateMaybeMessage<::Task1::Student>(Arena*);
+template<> ::Task1::StudentsGroup* Arena::CreateMaybeMessage<::Task1::StudentsGroup>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
+namespace Task1 {
 
 // ===================================================================
 
+class FullName final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Task1.FullName) */ {
+ public:
+  inline FullName() : FullName(nullptr) {}
+  ~FullName() override;
+  explicit constexpr FullName(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
+  FullName(const FullName& from);
+  FullName(FullName&& from) noexcept
+    : FullName() {
+    *this = ::std::move(from);
+  }
+
+  inline FullName& operator=(const FullName& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FullName& operator=(FullName&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FullName& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FullName* internal_default_instance() {
+    return reinterpret_cast<const FullName*>(
+               &_FullName_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(FullName& a, FullName& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FullName* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FullName* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FullName* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FullName>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FullName& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FullName& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FullName* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Task1.FullName";
+  }
+  protected:
+  explicit FullName(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFirstNameFieldNumber = 1,
+    kMiddleNameFieldNumber = 2,
+    kLastNameFieldNumber = 3,
+  };
+  // string FirstName = 1;
+  void clear_firstname();
+  const std::string& firstname() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_firstname(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_firstname();
+  PROTOBUF_NODISCARD std::string* release_firstname();
+  void set_allocated_firstname(std::string* firstname);
+  private:
+  const std::string& _internal_firstname() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_firstname(const std::string& value);
+  std::string* _internal_mutable_firstname();
+  public:
+
+  // string MiddleName = 2;
+  void clear_middlename();
+  const std::string& middlename() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_middlename(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_middlename();
+  PROTOBUF_NODISCARD std::string* release_middlename();
+  void set_allocated_middlename(std::string* middlename);
+  private:
+  const std::string& _internal_middlename() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_middlename(const std::string& value);
+  std::string* _internal_mutable_middlename();
+  public:
+
+  // string LastName = 3;
+  void clear_lastname();
+  const std::string& lastname() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_lastname(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_lastname();
+  PROTOBUF_NODISCARD std::string* release_lastname();
+  void set_allocated_lastname(std::string* lastname);
+  private:
+  const std::string& _internal_lastname() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_lastname(const std::string& value);
+  std::string* _internal_mutable_lastname();
+  public:
+
+  // @@protoc_insertion_point(class_scope:Task1.FullName)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr firstname_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr middlename_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr lastname_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_Task1_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Student final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Task1.Student) */ {
+ public:
+  inline Student() : Student(nullptr) {}
+  ~Student() override;
+  explicit constexpr Student(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Student(const Student& from);
+  Student(Student&& from) noexcept
+    : Student() {
+    *this = ::std::move(from);
+  }
+
+  inline Student& operator=(const Student& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Student& operator=(Student&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Student& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Student* internal_default_instance() {
+    return reinterpret_cast<const Student*>(
+               &_Student_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(Student& a, Student& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Student* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Student* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Student* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Student>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Student& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const Student& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Student* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Task1.Student";
+  }
+  protected:
+  explicit Student(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMarksFieldNumber = 2,
+    kStudentNameFieldNumber = 1,
+    kAverageRatingFieldNumber = 3,
+  };
+  // repeated int32 Marks = 2;
+  int marks_size() const;
+  private:
+  int _internal_marks_size() const;
+  public:
+  void clear_marks();
+  private:
+  int32_t _internal_marks(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_marks() const;
+  void _internal_add_marks(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_marks();
+  public:
+  int32_t marks(int index) const;
+  void set_marks(int index, int32_t value);
+  void add_marks(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      marks() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_marks();
+
+  // .Task1.FullName StudentName = 1;
+  bool has_studentname() const;
+  private:
+  bool _internal_has_studentname() const;
+  public:
+  void clear_studentname();
+  const ::Task1::FullName& studentname() const;
+  PROTOBUF_NODISCARD ::Task1::FullName* release_studentname();
+  ::Task1::FullName* mutable_studentname();
+  void set_allocated_studentname(::Task1::FullName* studentname);
+  private:
+  const ::Task1::FullName& _internal_studentname() const;
+  ::Task1::FullName* _internal_mutable_studentname();
+  public:
+  void unsafe_arena_set_allocated_studentname(
+      ::Task1::FullName* studentname);
+  ::Task1::FullName* unsafe_arena_release_studentname();
+
+  // float AverageRating = 3;
+  void clear_averagerating();
+  float averagerating() const;
+  void set_averagerating(float value);
+  private:
+  float _internal_averagerating() const;
+  void _internal_set_averagerating(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:Task1.Student)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > marks_;
+  mutable std::atomic<int> _marks_cached_byte_size_;
+  ::Task1::FullName* studentname_;
+  float averagerating_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_Task1_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StudentsGroup final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Task1.StudentsGroup) */ {
+ public:
+  inline StudentsGroup() : StudentsGroup(nullptr) {}
+  ~StudentsGroup() override;
+  explicit constexpr StudentsGroup(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StudentsGroup(const StudentsGroup& from);
+  StudentsGroup(StudentsGroup&& from) noexcept
+    : StudentsGroup() {
+    *this = ::std::move(from);
+  }
+
+  inline StudentsGroup& operator=(const StudentsGroup& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StudentsGroup& operator=(StudentsGroup&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StudentsGroup& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StudentsGroup* internal_default_instance() {
+    return reinterpret_cast<const StudentsGroup*>(
+               &_StudentsGroup_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(StudentsGroup& a, StudentsGroup& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StudentsGroup* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StudentsGroup* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StudentsGroup* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StudentsGroup>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StudentsGroup& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const StudentsGroup& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StudentsGroup* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Task1.StudentsGroup";
+  }
+  protected:
+  explicit StudentsGroup(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStudentsOfGroupFieldNumber = 1,
+  };
+  // repeated .Task1.Student StudentsOfGroup = 1;
+  int studentsofgroup_size() const;
+  private:
+  int _internal_studentsofgroup_size() const;
+  public:
+  void clear_studentsofgroup();
+  ::Task1::Student* mutable_studentsofgroup(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Task1::Student >*
+      mutable_studentsofgroup();
+  private:
+  const ::Task1::Student& _internal_studentsofgroup(int index) const;
+  ::Task1::Student* _internal_add_studentsofgroup();
+  public:
+  const ::Task1::Student& studentsofgroup(int index) const;
+  ::Task1::Student* add_studentsofgroup();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Task1::Student >&
+      studentsofgroup() const;
+
+  // @@protoc_insertion_point(class_scope:Task1.StudentsGroup)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Task1::Student > studentsofgroup_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_Task1_2eproto;
+};
 // ===================================================================
 
 
@@ -66,12 +609,377 @@ PROTOBUF_NAMESPACE_CLOSE
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// FullName
+
+// string FirstName = 1;
+inline void FullName::clear_firstname() {
+  firstname_.ClearToEmpty();
+}
+inline const std::string& FullName::firstname() const {
+  // @@protoc_insertion_point(field_get:Task1.FullName.FirstName)
+  return _internal_firstname();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void FullName::set_firstname(ArgT0&& arg0, ArgT... args) {
+ 
+ firstname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Task1.FullName.FirstName)
+}
+inline std::string* FullName::mutable_firstname() {
+  std::string* _s = _internal_mutable_firstname();
+  // @@protoc_insertion_point(field_mutable:Task1.FullName.FirstName)
+  return _s;
+}
+inline const std::string& FullName::_internal_firstname() const {
+  return firstname_.Get();
+}
+inline void FullName::_internal_set_firstname(const std::string& value) {
+  
+  firstname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* FullName::_internal_mutable_firstname() {
+  
+  return firstname_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* FullName::release_firstname() {
+  // @@protoc_insertion_point(field_release:Task1.FullName.FirstName)
+  return firstname_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void FullName::set_allocated_firstname(std::string* firstname) {
+  if (firstname != nullptr) {
+    
+  } else {
+    
+  }
+  firstname_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), firstname,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (firstname_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    firstname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Task1.FullName.FirstName)
+}
+
+// string MiddleName = 2;
+inline void FullName::clear_middlename() {
+  middlename_.ClearToEmpty();
+}
+inline const std::string& FullName::middlename() const {
+  // @@protoc_insertion_point(field_get:Task1.FullName.MiddleName)
+  return _internal_middlename();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void FullName::set_middlename(ArgT0&& arg0, ArgT... args) {
+ 
+ middlename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Task1.FullName.MiddleName)
+}
+inline std::string* FullName::mutable_middlename() {
+  std::string* _s = _internal_mutable_middlename();
+  // @@protoc_insertion_point(field_mutable:Task1.FullName.MiddleName)
+  return _s;
+}
+inline const std::string& FullName::_internal_middlename() const {
+  return middlename_.Get();
+}
+inline void FullName::_internal_set_middlename(const std::string& value) {
+  
+  middlename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* FullName::_internal_mutable_middlename() {
+  
+  return middlename_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* FullName::release_middlename() {
+  // @@protoc_insertion_point(field_release:Task1.FullName.MiddleName)
+  return middlename_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void FullName::set_allocated_middlename(std::string* middlename) {
+  if (middlename != nullptr) {
+    
+  } else {
+    
+  }
+  middlename_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), middlename,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (middlename_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    middlename_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Task1.FullName.MiddleName)
+}
+
+// string LastName = 3;
+inline void FullName::clear_lastname() {
+  lastname_.ClearToEmpty();
+}
+inline const std::string& FullName::lastname() const {
+  // @@protoc_insertion_point(field_get:Task1.FullName.LastName)
+  return _internal_lastname();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void FullName::set_lastname(ArgT0&& arg0, ArgT... args) {
+ 
+ lastname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Task1.FullName.LastName)
+}
+inline std::string* FullName::mutable_lastname() {
+  std::string* _s = _internal_mutable_lastname();
+  // @@protoc_insertion_point(field_mutable:Task1.FullName.LastName)
+  return _s;
+}
+inline const std::string& FullName::_internal_lastname() const {
+  return lastname_.Get();
+}
+inline void FullName::_internal_set_lastname(const std::string& value) {
+  
+  lastname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* FullName::_internal_mutable_lastname() {
+  
+  return lastname_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* FullName::release_lastname() {
+  // @@protoc_insertion_point(field_release:Task1.FullName.LastName)
+  return lastname_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void FullName::set_allocated_lastname(std::string* lastname) {
+  if (lastname != nullptr) {
+    
+  } else {
+    
+  }
+  lastname_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), lastname,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (lastname_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    lastname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Task1.FullName.LastName)
+}
+
+// -------------------------------------------------------------------
+
+// Student
+
+// .Task1.FullName StudentName = 1;
+inline bool Student::_internal_has_studentname() const {
+  return this != internal_default_instance() && studentname_ != nullptr;
+}
+inline bool Student::has_studentname() const {
+  return _internal_has_studentname();
+}
+inline void Student::clear_studentname() {
+  if (GetArenaForAllocation() == nullptr && studentname_ != nullptr) {
+    delete studentname_;
+  }
+  studentname_ = nullptr;
+}
+inline const ::Task1::FullName& Student::_internal_studentname() const {
+  const ::Task1::FullName* p = studentname_;
+  return p != nullptr ? *p : reinterpret_cast<const ::Task1::FullName&>(
+      ::Task1::_FullName_default_instance_);
+}
+inline const ::Task1::FullName& Student::studentname() const {
+  // @@protoc_insertion_point(field_get:Task1.Student.StudentName)
+  return _internal_studentname();
+}
+inline void Student::unsafe_arena_set_allocated_studentname(
+    ::Task1::FullName* studentname) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(studentname_);
+  }
+  studentname_ = studentname;
+  if (studentname) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:Task1.Student.StudentName)
+}
+inline ::Task1::FullName* Student::release_studentname() {
+  
+  ::Task1::FullName* temp = studentname_;
+  studentname_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::Task1::FullName* Student::unsafe_arena_release_studentname() {
+  // @@protoc_insertion_point(field_release:Task1.Student.StudentName)
+  
+  ::Task1::FullName* temp = studentname_;
+  studentname_ = nullptr;
+  return temp;
+}
+inline ::Task1::FullName* Student::_internal_mutable_studentname() {
+  
+  if (studentname_ == nullptr) {
+    auto* p = CreateMaybeMessage<::Task1::FullName>(GetArenaForAllocation());
+    studentname_ = p;
+  }
+  return studentname_;
+}
+inline ::Task1::FullName* Student::mutable_studentname() {
+  ::Task1::FullName* _msg = _internal_mutable_studentname();
+  // @@protoc_insertion_point(field_mutable:Task1.Student.StudentName)
+  return _msg;
+}
+inline void Student::set_allocated_studentname(::Task1::FullName* studentname) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete studentname_;
+  }
+  if (studentname) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::Task1::FullName>::GetOwningArena(studentname);
+    if (message_arena != submessage_arena) {
+      studentname = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, studentname, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  studentname_ = studentname;
+  // @@protoc_insertion_point(field_set_allocated:Task1.Student.StudentName)
+}
+
+// repeated int32 Marks = 2;
+inline int Student::_internal_marks_size() const {
+  return marks_.size();
+}
+inline int Student::marks_size() const {
+  return _internal_marks_size();
+}
+inline void Student::clear_marks() {
+  marks_.Clear();
+}
+inline int32_t Student::_internal_marks(int index) const {
+  return marks_.Get(index);
+}
+inline int32_t Student::marks(int index) const {
+  // @@protoc_insertion_point(field_get:Task1.Student.Marks)
+  return _internal_marks(index);
+}
+inline void Student::set_marks(int index, int32_t value) {
+  marks_.Set(index, value);
+  // @@protoc_insertion_point(field_set:Task1.Student.Marks)
+}
+inline void Student::_internal_add_marks(int32_t value) {
+  marks_.Add(value);
+}
+inline void Student::add_marks(int32_t value) {
+  _internal_add_marks(value);
+  // @@protoc_insertion_point(field_add:Task1.Student.Marks)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Student::_internal_marks() const {
+  return marks_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Student::marks() const {
+  // @@protoc_insertion_point(field_list:Task1.Student.Marks)
+  return _internal_marks();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Student::_internal_mutable_marks() {
+  return &marks_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Student::mutable_marks() {
+  // @@protoc_insertion_point(field_mutable_list:Task1.Student.Marks)
+  return _internal_mutable_marks();
+}
+
+// float AverageRating = 3;
+inline void Student::clear_averagerating() {
+  averagerating_ = 0;
+}
+inline float Student::_internal_averagerating() const {
+  return averagerating_;
+}
+inline float Student::averagerating() const {
+  // @@protoc_insertion_point(field_get:Task1.Student.AverageRating)
+  return _internal_averagerating();
+}
+inline void Student::_internal_set_averagerating(float value) {
+  
+  averagerating_ = value;
+}
+inline void Student::set_averagerating(float value) {
+  _internal_set_averagerating(value);
+  // @@protoc_insertion_point(field_set:Task1.Student.AverageRating)
+}
+
+// -------------------------------------------------------------------
+
+// StudentsGroup
+
+// repeated .Task1.Student StudentsOfGroup = 1;
+inline int StudentsGroup::_internal_studentsofgroup_size() const {
+  return studentsofgroup_.size();
+}
+inline int StudentsGroup::studentsofgroup_size() const {
+  return _internal_studentsofgroup_size();
+}
+inline void StudentsGroup::clear_studentsofgroup() {
+  studentsofgroup_.Clear();
+}
+inline ::Task1::Student* StudentsGroup::mutable_studentsofgroup(int index) {
+  // @@protoc_insertion_point(field_mutable:Task1.StudentsGroup.StudentsOfGroup)
+  return studentsofgroup_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Task1::Student >*
+StudentsGroup::mutable_studentsofgroup() {
+  // @@protoc_insertion_point(field_mutable_list:Task1.StudentsGroup.StudentsOfGroup)
+  return &studentsofgroup_;
+}
+inline const ::Task1::Student& StudentsGroup::_internal_studentsofgroup(int index) const {
+  return studentsofgroup_.Get(index);
+}
+inline const ::Task1::Student& StudentsGroup::studentsofgroup(int index) const {
+  // @@protoc_insertion_point(field_get:Task1.StudentsGroup.StudentsOfGroup)
+  return _internal_studentsofgroup(index);
+}
+inline ::Task1::Student* StudentsGroup::_internal_add_studentsofgroup() {
+  return studentsofgroup_.Add();
+}
+inline ::Task1::Student* StudentsGroup::add_studentsofgroup() {
+  ::Task1::Student* _add = _internal_add_studentsofgroup();
+  // @@protoc_insertion_point(field_add:Task1.StudentsGroup.StudentsOfGroup)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Task1::Student >&
+StudentsGroup::studentsofgroup() const {
+  // @@protoc_insertion_point(field_list:Task1.StudentsGroup.StudentsOfGroup)
+  return studentsofgroup_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace Task1
 
 // @@protoc_insertion_point(global_scope)
 
