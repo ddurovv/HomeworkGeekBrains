@@ -38,8 +38,8 @@ namespace NSG {
         {
             auto it = std::find_if(m_students.begin(), m_students.end(), [&](const Task1::Student& s)
                 {
-                    return std::tie(s.StudentName().FirstName(), s.StudentName().LastName(), s.StudentName().MiddleName()) ==
-                        std::tie(name.FirstName(), name.LastName(), name.MiddleName());
+                    return std::tie(s.studentname().firstname(), s.studentname().lastname(), s.studentname().middlename()) ==
+                        std::tie(name.firstname(), name.lastname(), name.middlename());
                 });
 
             if (it == m_students.end())
@@ -47,15 +47,15 @@ namespace NSG {
                 return 0.0;
             }
 
-            return it->AverageRaiting();
+            return it->averagerating();
         }
 
         std::string GetAllInfo(const Task1::FullName& name)
         {
             auto it = std::find_if(m_students.begin(), m_students.end(), [&](const Task1::Student& s)
                 {
-                    return std::tie(s.StudentName().FirstName(), s.StudentName().LastName(), s.StudentName().MiddleName()) ==
-                        std::tie(name.FirstName(), name.LastName(), name.MiddleName());
+                    return std::tie(s.studentname().firstname(), s.studentname().lastname(), s.studentname().middlename()) ==
+                        std::tie(name.firstname(), name.lastname(), name.middlename());
                 });
 
             if (it == m_students.end())
@@ -63,14 +63,14 @@ namespace NSG {
                 return {};
             }
 
-            std::string temp = "Full Name: " + it->StudentName().FirstName() + ' ' + it->StudentName().LastName() + ' ' + it->StudentName().MiddleName() + "\n";
+            std::string temp = "Full Name: " + it->studentname().firstname() + ' ' + it->studentname().lastname() + ' ' + it->studentname().middlename() + "\n";
             temp += "Marks: ";
-            for (int i = 0; i < it->Marks().size(); ++i)
+            for (int i = 0; i < it->marks().size(); ++i)
             {
-                temp += std::to_string(it->Marks(i)) + "; ";
+                temp += std::to_string(it->marks(i)) + "; ";
             }
             temp += '\n';
-            temp += "Average Raiting: " + std::to_string(it->AverageRaiting()) + "\n\n";
+            temp += "Average Rating: " + std::to_string(it->averagerating()) + "\n\n";
 
             return temp;
         }
@@ -81,7 +81,7 @@ namespace NSG {
 
             std::for_each(m_students.begin(), m_students.end(), [&](const Task1::Student& s)
                 {
-                    temp += GetAllInfo(s.StudentName());
+                    temp += GetAllInfo(s.studentname());
                 });
 
             return temp;

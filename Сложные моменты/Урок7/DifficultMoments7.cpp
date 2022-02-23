@@ -10,24 +10,24 @@ int main()
 {
     {
     Task1::FullName fn;
-    fn.set_FirstName("Dmitrii");
-    fn.set_LastName("Durov");
-    fn.set_MiddleName("Igorevich");
+    fn.set_firstname ("Dmitrii");
+    fn.set_lastname("Durov");
+    fn.set_middlename("Igorevich");
 
     Task1::Student s;
-    *s.mutable_StudentName() = fn;
-    s.add_Marks(5);
-    s.add_Marks(2);
-    s.add_Marks(4);
-    s.add_Marks(3);
-    s.add_Marks(4);
-    s.add_Marks(3);
-    s.add_Marks(4);
-    s.add_Marks(3);
-    s.set_AverageRating(std::accumulate(s.Marks().begin(), s.Marks().end(), 0) / s.Marks().size());
+    *s.mutable_studentname() = fn;
+    s.add_marks(5);
+    s.add_marks(2);
+    s.add_marks(4);
+    s.add_marks(3);
+    s.add_marks(4);
+    s.add_marks(3);
+    s.add_marks(4);
+    s.add_marks(3);
+    s.set_averagerating(std::accumulate(s.marks().begin(), s.marks().end(), 0) / s.marks().size());
 
     Task1::StudentsGroup sg;
-    *sg.add_StudentsOfGroup() = s;
+    *sg.add_studentsofgroup() = s;
 
     std::ofstream out("student.bin", std::ios_base::binary);
     sg.SerializeToOstream(&out);
@@ -37,8 +37,8 @@ int main()
     std::ifstream in("student.bin", std::ios_base::binary);
     if (new_sg.ParseFromIstream(&in))
     {
-        std::cout << new_sg.StudentsOfGroup(0).StudentName().LastName() << "\n";
-        std::cout << new_sg.StudentsOfGroup(0).AverageRaiting() << "\n";
+        std::cout << new_sg.studentsofgroup(0).studentname().lastname() << "\n";
+        std::cout << new_sg.studentsofgroup(0).averagerating() << "\n";
     }
     else
     {
