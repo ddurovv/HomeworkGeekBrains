@@ -17,12 +17,26 @@ class MYSECOND_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 public:
-	void OnMoveForward(float Scale);
-	void OnMoveLateral(float Scale);
 	virtual void SetupInputComponent() override;
 
 	virtual void OnPossess(APawn* InPawn) override;
-private:
+
+	virtual void Tick(float DeltaSeconds) override;
+
+	FVector GetMousePosition() const
+	{
+		return MousePosition;
+	}
+private: 
+	void OnMoveForward(float Scale);
+	void OnMoveLateral(float Scale);
+	void OnRotateRight(float Scale);
+	void OnFire();
+	void OnFireSpecial();
+	
 	UPROPERTY() //прописывать не надо, так как он приватный, а ещё не будет удаляться движком, потомушо макрос
 	ATankPawn* TankPawn;
+
+	FVector MousePosition; 
+	
 };
